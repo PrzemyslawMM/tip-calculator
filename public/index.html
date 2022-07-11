@@ -9,10 +9,64 @@
       sizes="32x32"
       href="../images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="./public/styles.css" />
+    <script defer src="bundle.js"></script>
   </head>
   <body>
+    <img src="images/logo.svg" alt="logo" />
+    <main>
+      <div class="information__container">
+        <section class="bill">
+          <label for="bill_number">Bill</label>
+          <div class="input_bill_container">
+            <input type="number" id="bill_number" value="1" />
+          </div>
+        </section>
+        <section class="tip_percent">
+          <p>Select Tip %</p>
+          <div class="tip_grid">
+            <button class="unactive">5%</button>
+            <button class="unactive">10%</button>
+            <button class="active">15%</button>
+            <button class="unactive">25%</button>
+            <button class="unactive">50%</button>
+            <input class="custom_button" placeholder="Custom" type="number" />
+          </div>
+        </section>
+        <section class="number_of_people">
+          <label for="amount_of_people">Number of People</label>
+          <div class="input_number_of_people_container">
+            <input type="number" id="amount_of_people" value="1" />
+          </div>
+        </section>
+      </div>
+      <section class="result">
+        <div>
+          <div class="tip_amount">
+            <div>
+              <p class="result__p">Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <p class="amount">$4.27</p>
+          </div>
+          <div class="total">
+            <div>
+              <p class="result__p">Total</p>
+              <p>/ person</p>
+            </div>
+            <p class="amount">$32.79</p>
+          </div>
+        </div>
+        <button class="reset_button">RESET</button>
+      </section>
+    </main>
     <!--    <div class="attribution">-->
     <!--      Challenge by-->
     <!--      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"-->

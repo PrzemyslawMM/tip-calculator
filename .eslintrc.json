@@ -36,6 +36,8 @@
         "no-param-reassign": "off",
         "operator-linebreak": "off",
         "import/prefer-default-export": "off",
+        "no-unused-vars": "warn",
+        "prefer-const": "off",
         "import/extensions": [
             "error",
             "ignorePackages",

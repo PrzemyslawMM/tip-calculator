@@ -1,13 +1,294 @@
 :root {
-  --input-color: hsl(186, 14%, 43%);
+  --input-color: hsl(189, 41%, 97%);
   --title-color: hsl(184, 14%, 56%);
   --active-button: hsl(172, 67%, 45%);
   --un-active-button: hsl(183, 100%, 15%);
   --background-color: hsl(185, 41%, 84%);
   --font-color: hsl(0, 0%, 100%);
-  --box-baground-color: hsl(189, 41%, 97%);
+  --box-baground-color: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--title-color);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
   background: var(--background-color);
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--box-baground-color);
+  border-radius: 1rem;
+  padding-bottom: 1rem;
+}
+
+.input_bill_container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input_bill_container::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 16px;
+  width: 24px;
+  height: 17px;
+  background: url('../images/icon-dollar.svg') no-repeat;
+}
+
+.bill {
+  width: 315px;
+  margin-top: 2rem;
+}
+
+.bill input {
+  width: 315px;
+  font-family: 'Space Mono', monospace;
+  color: var(--un-active-button);
+  padding-right: 0.5rem;
+  text-align: right;
+  font-size: 1.5rem;
+  background: var(--input-color);
+  border: none;
+  height: 50px;
+}
+
+.tip_percent {
+  margin-top: 1.5rem;
+}
+
+.tip_grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  gap: 15px;
+}
+
+.tip_grid button {
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+}
+
+.tip_grid button:hover {
+  background: var(--active-button);
+  color: var(--un-active-button);
+}
+
+.tip_grid input {
+  border: none;
+  border-radius: 5px;
+  background: var(--input-color);
+  padding-right: 15px;
+}
+
+.tip_grid input::placeholder {
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  text-align: end;
+}
+
+.unactive {
+  background: var(--un-active-button);
+  color: var(--font-color);
+}
+
+.custom_button::placeholder {
+  color: var(--title-color);
+}
+
+.custom_button {
+  color: var(--un-active-button);
+  font-size: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-align: right;
+}
+
+.active {
+  background: var(--active-button);
+  color: var(--un-active-button);
+}
+
+.input_number_of_people_container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input_number_of_people_container::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 16px;
+  width: 24px;
+  height: 17px;
+  background: url('../images/icon-person.svg') no-repeat;
+}
+
+.number_of_people {
+  width: 315px;
+  margin-top: 1rem;
+}
+
+.number_of_people input {
+  width: 315px;
+  font-family: 'Space Mono', monospace;
+  color: var(--un-active-button);
+  padding-right: 0.5rem;
+  text-align: right;
+  font-size: 1.5rem;
+  background: var(--input-color);
+  border: none;
+  height: 50px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  width: 315px;
+  background: var(--un-active-button);
+  border-radius: 1rem;
+}
+
+.result > div > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.result__p {
+  color: var(--font-color);
+}
+
+.total {
+  margin-top: 1rem;
+}
+
+.amount {
+  font-size: 2rem;
+  color: var(--active-button);
+}
+
+.reset_button {
+  margin: 1rem 0;
+  border: none;
+  color: var(--un-active-button);
+  width: 250px;
+  height: 50px;
+  border-radius: 0.5rem;
+  background: var(--active-button);
+  align-self: center;
+  font-size: 2rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  main {
+    width: 800px;
+    min-height: 500px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .result {
+    height: 440px;
+    justify-content: space-between;
+  }
+
+  .tip_amount {
+    margin: 2.5rem 0 3rem 0;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    width: 1100px;
+    min-height: 500px;
+  }
+
+  .tip_grid {
+    grid-template-columns: 150px 150px 150px;
+  }
+
+  .number_of_people {
+    width: 480px;
+  }
+
+  .number_of_people input {
+    width: 480px;
+  }
+
+  .bill {
+    width: 480px;
+  }
+
+  .bill input {
+    width: 480px;
+  }
+
+  .result {
+    width: 480px;
+  }
+
+  .reset_button {
+    width: 400px;
+  }
+
+  .amount {
+    font-size: 3.5rem;
+  }
+
+  .total > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tip_amount > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .number_of_people {
+    margin-top: 3.5rem;
+  }
+
+  .tip_percent {
+    margin-top: 3rem;
+  }
 }
